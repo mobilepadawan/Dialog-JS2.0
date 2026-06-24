@@ -1,0 +1,169 @@
+/* ==========================================================================
+   Dialog-JS 2.0 - Cosmic Dark Theme Stylesheet
+   ========================================================================== */
+
+/* Native dialog reset and design container */
+.dialog2 {
+    /* Dimensions and positioning */
+    width: 90%;
+    max-width: 520px;
+    /* Aligned with default-theme updates */
+    padding: 24px;
+    position: relative;
+    /* Enabled for absolute icon placement */
+
+    /* Box Model Styles */
+    background-color: #121020;
+    /* Cosmic dark background */
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    /* Glowing indigo border */
+    border-radius: 16px;
+    box-shadow:
+        0 0 15px rgba(99, 102, 241, 0.1),
+        0 24px 48px rgba(0, 0, 0, 0.4);
+
+    /* Typography & Color */
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #f3f4f6;
+    /* Off-white */
+
+    /* Behavior resets */
+    outline: none;
+    margin: auto;
+    /* Centered in browser viewport */
+    box-sizing: border-box;
+}
+
+/* Backdrop Dimming and Blur */
+.dialog2::backdrop {
+    background-color: rgba(4, 3, 7, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    animation: dialog2-backdrop-fade 0.25s ease-out;
+}
+
+/* Header Section */
+.dialog2-header {
+    display: flex;
+    align-items: center;
+    margin-left: 76px;
+    /* Offset to make room for absolute icon */
+    margin-bottom: 12px;
+}
+
+/* Icon (emoji container) styling */
+.dialog2-icon {
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    font-size: 3rem;
+    /* Doubled from 1.75rem */
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    height: 64px;
+    /* Matches the approximate height of title + message */
+}
+
+/* Title text */
+.dialog2-title {
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #ffffff;
+    /* Pure white */
+    margin: 0;
+}
+
+/* Body / Message Content */
+.dialog2-content {
+    margin-left: 76px;
+    /* Offset to align with title */
+    margin-bottom: 24px;
+    min-height: 36px;
+    /* Ensures minimum vertical area for content next to icon */
+}
+
+.dialog2-message {
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #9ca3af;
+    /* Gray secondary text */
+    margin: 0;
+}
+
+/* Actions Footer */
+.dialog2-footer {
+    gap: 12px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 26px;
+}
+
+/* Button Foundation */
+.dialog2-btn {
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+/* Primary Button (OK) - Cosmic Gradient */
+.dialog2-btn-primary {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.dialog2-btn-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+}
+
+.dialog2-btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.dialog2-btn-primary:focus-visible {
+    outline: 2px solid #a855f7;
+    outline-offset: 2px;
+}
+
+/* Entry Animation for the modal window */
+.dialog2[open] {
+    animation: dialog2-slide-up 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Keyframes */
+@keyframes dialog2-slide-up {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes dialog2-backdrop-fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

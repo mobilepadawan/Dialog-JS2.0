@@ -1,0 +1,228 @@
+/* ==========================================================================
+   Dialog-JS 2.0 - macOS / iOS Apple Style Theme (Larger & Isolated)
+   ========================================================================== */
+
+/* Dialog Container - Translucent frosted card with explicit flex column layout */
+.dialog2 {
+    /* Dimensions and positioning */
+    width: 340px;
+    /* Increased from 275px for a larger macOS presentation */
+    max-width: 90%;
+    padding: 24px 0 0 0 !important;
+    /* No horizontal/bottom padding for clean button hair-lines */
+    margin: auto !important;
+    /* Centered in browser viewport */
+    box-sizing: border-box !important;
+    outline: none !important;
+    border: 0.5px solid rgba(0, 0, 0, 0.15) !important;
+    border-radius: 16px !important;
+    /* Slightly increased radius for a premium look */
+
+    /* Layout isolation to prevent overlapping elements */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    position: relative !important;
+
+    /* Typography */
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    text-align: center !important;
+
+    /* Frosted Glass Vibrancy Effect (Light Mode Default) */
+    background-color: rgba(255, 255, 255, 0.90) !important;
+    backdrop-filter: blur(30px) saturate(190%) !important;
+    -webkit-backdrop-filter: blur(30px) saturate(190%) !important;
+    box-shadow:
+        0 1px 1px rgba(0, 0, 0, 0.05),
+        0 24px 64px rgba(0, 0, 0, 0.22) !important;
+
+    color: #1c1c1e !important;
+}
+
+/* Backdrop dimming and blur */
+.dialog2::backdrop {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    animation: apple-backdrop-fade 0.22s ease-out !important;
+}
+
+/* Header Section */
+.dialog2-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 24px !important;
+    margin-left: 0 !important;
+    /* Overrides default theme offset */
+    margin-bottom: 8px !important;
+    position: static !important;
+    width: auto !important;
+}
+
+/* Centered Icon above Title (Static placement to prevent overlaps) */
+.dialog2-icon {
+    position: static !important;
+    /* Overrides default absolute positioning */
+    font-size: 3.5rem !important;
+    /* Larger emoji presentation */
+    line-height: 1 !important;
+    margin: 0 0 12px 0 !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    user-select: none !important;
+}
+
+/* Title styling (SF Pro Semibold) */
+.dialog2-title {
+    font-size: 19px !important;
+    /* Increased from 17px */
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.4px !important;
+    color: #000000 !important;
+    margin: 0 !important;
+}
+
+/* Content Area */
+.dialog2-content {
+    padding: 0 24px 24px 24px !important;
+    margin: 0 !important;
+    margin-left: 0 !important;
+    /* Overrides default theme offset */
+    min-height: auto !important;
+    /* Resets default theme minimum height */
+    display: block !important;
+}
+
+/* Message styling (SF Pro regular) */
+.dialog2-message {
+    font-size: 14px !important;
+    /* Increased from 13px */
+    font-weight: 400 !important;
+    line-height: 1.45 !important;
+    letter-spacing: -0.15px !important;
+    color: #3a3a3c !important;
+    margin: 0 !important;
+}
+
+/* Footer layout for Apple hair-line button borders */
+.dialog2-footer {
+    display: flex !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-top: 0.5px solid rgba(60, 60, 67, 0.29) !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+}
+
+/* Button Styling resets */
+.dialog2-btn {
+    flex: 1 !important;
+    background: none !important;
+    border: none !important;
+    font-family: inherit !important;
+    font-size: 17px !important;
+    font-weight: 400 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.4px !important;
+    padding: 14px 16px !important;
+    /* Slightly increased padding */
+    cursor: pointer !important;
+    outline: none !important;
+    color: #007aff !important;
+    /* Apple System Blue */
+    text-align: center !important;
+    box-sizing: border-box !important;
+    transition: background-color 0.12s !important;
+}
+
+/* Primary Button weight */
+.dialog2-btn-primary {
+    font-weight: 600 !important;
+}
+
+/* Active Highlight Tap State */
+.dialog2-btn:active {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: #0056b3 !important;
+    /* Saturated active iOS blue */
+}
+
+/* Hairline divider between buttons */
+.dialog2-btn + .dialog2-btn {
+    border-left: 0.5px solid rgba(60, 60, 67, 0.29) !important;
+}
+
+/* Spring popup animation */
+.dialog2[open] {
+    animation: apple-spring-in 0.26s cubic-bezier(0.25, 0.8, 0.25, 1.15) !important;
+}
+
+/* System Dark Mode Integration */
+@media (prefers-color-scheme: dark) {
+    .dialog2 {
+        background-color: rgba(30, 30, 30, 0.88) !important;
+        /* Apple Dark Material */
+        border: 0.5px solid rgba(255, 255, 255, 0.12) !important;
+        box-shadow:
+            0 1px 1px rgba(0, 0, 0, 0.15),
+            0 24px 64px rgba(0, 0, 0, 0.5) !important;
+        color: #ffffff !important;
+    }
+
+    .dialog2-title {
+        color: #ffffff !important;
+    }
+
+    .dialog2-message {
+        color: #ebebf5 !important;
+    }
+
+    .dialog2-footer {
+        border-top-color: rgba(84, 84, 88, 0.65) !important;
+        /* Apple Dark Separator */
+    }
+
+    .dialog2-btn {
+        color: #0a84ff !important;
+        /* Apple System Blue for Dark Mode */
+    }
+
+    .dialog2-btn:active {
+        background-color: rgba(255, 255, 255, 0.08) !important;
+        color: #409cff !important;
+        /* Lighter active iOS blue for dark mode */
+    }
+
+    .dialog2-btn + .dialog2-btn {
+        border-left-color: rgba(84, 84, 88, 0.65) !important;
+    }
+}
+
+/* Keyframe definitions */
+@keyframes apple-spring-in {
+    0% {
+        opacity: 0;
+        transform: scale(1.15);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes apple-backdrop-fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
