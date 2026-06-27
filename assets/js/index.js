@@ -1,25 +1,24 @@
-import { Dialog2 } from "../../src/dialogJS2.0.js";
+import { Dialog2 } from "../../src/dialogJS2.0.min.js";
 
 document.querySelector('h1.header-title').addEventListener('click', () => {
-    Dialog2.Prompt('Dato a buscar', 'Ingresa por favor parte del nombre de producto a buscar:', 'producto a buscar', 'search', 'Buscar', 'Cancelar')
+    Dialog2.Prompt('Título', 'Ingresa el dato solicitado', 'Dato a buscar', 'search', 'Buscar', 'Cerrar')
         .then((result) => {
             console.log(result)
-        });
+    });
 
-    // Dialog2.Confirm('Título del diálogo', 'Este es un mensaje de prueba, sólo para ver qué tal luce el cuadro de alerta y el mensaje en la aplicación.', 'SUCCESS', "Aceptar", "Cancelar")
+    // Dialog2.Confirm('Título del diálogo', 'Este es un mensaje de prueba, sólo para ver qué tal luce el cuadro Confirm.', 'INFO', "Aceptar", "Cancelar")
     //         .then((result) => {
     //             console.log(result)
     // });
 
-    // Dialog2.Alert('Título del diálogo', 'Este es un mensaje de prueba, sólo para ver qué tal luce el cuadro de alerta y el mensaje en la aplicación.', 'SUCCESS', "Aceptar")
+    // Dialog2.Alert('Título del diálogo', 'Este es un mensaje de prueba, sólo para ver qué tal luce el cuadro de alerta y el mensaje en la aplicación.', 'WARNING', "Aceptar")
     //     .then((result) => {
     //         console.log(result)
-    //     });
+    // });
+
+    // Dialog2.Toast('Esto es un mensaje Toast, simple.', 'INFO', 5500, 'top-center');
 });
 
-// ==========================================================================
-// Dialog-JS 2.0 Simulation Engine
-// ==========================================================================
 const overlay = document.getElementById('dialog-overlay');
 const box = document.getElementById('dialog-box');
 const titleEl = document.getElementById('dialog-title-el');
@@ -37,14 +36,12 @@ const Dialog = {
         return new Promise((resolve) => {
             dialogResolver = resolve;
 
-            // Reset modal state
-            box.className = 'dialog-box'; // reset themes
+            box.className = 'dialog-box';
             box.classList.add(options.theme || 'theme-dark');
 
             titleEl.textContent = options.title || 'Alerta';
             messageEl.textContent = options.message || '';
 
-            // Configure dialog type features
             if (options.type === 'prompt') {
                 inputWrapper.classList.remove('hidden');
                 inputEl.value = options.defaultValue || '';
@@ -62,7 +59,6 @@ const Dialog = {
                 btnOk.textContent = options.okText || 'Aceptar';
             }
 
-            // Animate opening
             overlay.classList.remove('hidden');
             setTimeout(() => {
                 inputEl.focus();
@@ -107,7 +103,6 @@ btnClose.addEventListener('click', () => {
     Dialog.close(isPrompt ? null : false);
 });
 
-// Close when clicking overlay backdrop
 overlay.addEventListener('click', (e) => {
     if (e.target === overlay) {
         const isPrompt = !inputWrapper.classList.contains('hidden');
@@ -115,7 +110,6 @@ overlay.addEventListener('click', (e) => {
     }
 });
 
-// Support Enter/Escape keypress
 document.addEventListener('keydown', (e) => {
     if (!overlay.classList.contains('hidden')) {
         if (e.key === 'Enter') {
@@ -127,15 +121,8 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-
-// ==========================================================================
-// Interaction Handlers (Landing Page Sections)
-// ==========================================================================
-
-// Active Theme State tracker
 let activeGlobalTheme = 'theme-dark';
 
-// 1. Cards Trigger Dialogs (in Types Section)
 const demoTriggers = document.querySelectorAll('.btn-demo-trigger');
 demoTriggers.forEach(button => {
     button.addEventListener('click', async () => {
