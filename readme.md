@@ -27,7 +27,7 @@ npm i dialog-js2.0
 Import and use it in your JavaScript file:
 
 ```javascript
-import { Dialog2 } from './src/dialogJS2.0.js';
+import { Dialog2 } from 'dialogJS2.0.js';
 ```
 
 ### 2. Via CDN
@@ -37,7 +37,7 @@ You can also use it directly in the browser via native script modules:
 
 ```html
 <script type="module">
-    import { Dialog2 } from './src/dialogJS2.0.js';
+    import { Dialog2 } from './assets/js/dialogJS2.0.js';
     window.Dialog2 = Dialog2;
 </script>
 ```
@@ -50,7 +50,7 @@ Add this code in the `<head>` section in your HTML file(s) after download this l
 The default CSS file for this library is `dialogJS2-default-theme.css`. Reference this CSS file in the `<head>` section of every HTML file you include to your project.
 
 ```html
-<link rel="stylesheet" href="./src/dialogJS2-default-theme.css">
+<link rel="stylesheet" href="./assets/css/dialogJS2-default-theme.css">
 ```
 
 ## API Reference
