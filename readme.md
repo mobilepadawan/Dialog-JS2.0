@@ -1,5 +1,7 @@
 # Dialog JS2.0
 
+A lightweight, modern, and dependency-free JavaScript library for creating asynchronous, accessible native modal dialogs and toasts. Its weight is just `(8kb)`. Powered by the native HTML5 `<dialog>` element and fully compatible with JS Modules (ESM).
+
 ```
 🔔 NOTE ABOUT BUGS 🐞
 
@@ -7,8 +9,6 @@ We have become aware about the behavior of Toast() method called into of .then()
 method control process. We are implementing the solution in our library (Dev and Minified) 
 but we will publish the official fixed version in NPM after several validation tests.
 ```
-
-A lightweight, modern, and dependency-free JavaScript library for creating asynchronous, accessible native modal dialogs and toasts. Its weight is just `(8kb)`. Powered by the native HTML5 `<dialog>` element and fully compatible with JS Modules (ESM).
 
 ## Features
 
